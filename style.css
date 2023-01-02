@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.MyQuizApp,
+.RulesBox,
+.QuestionsBox {
+  width: 320px;
+  height: 580px;
+  background-color: #fff;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 10%);
+  border-radius: 15px;
+  position: relative;
+}
+
+.MyQuizApp .img img {
+  width: 100%;
+}
+
+.text {
+  width: 90%;
+  margin: auto;
+}
+
+.text h3 {
+  margin-top: 20px;
+}
+
+.MyBtn button,
+.BtnFooter button {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: tomato;
+  border: none;
+  outline: 0;
+  color: #fff;
+  padding: 8px 28px;
+  cursor: pointer;
+  bottom: 0;
+  position: absolute;
+  transition: .4s ease;
+}
+
+.BtnFooter button#Continue,
+button#NextQue,
+button#Start {
+  right: 0;
+  border-radius: 44px 0px 15px 0px;
+}
+
+.BtnFooter button#ExitQuiz {
+  left: 0;
+  border-radius: 0px 44px 0px 15px;
+}
+
+.MyBtn button:hover,
+.BtnFooter button:hover {
+  background: #1dc2c2;
+}
+
+.BtnFooter button#ExitQuiz:hover {
+  background: #880606;
+}
+
+
+/* Rules Steps */
+.RulesBox,
+.QBody {
+  line-height: 2rem;
+}
+
+.RulesTitle,
+.QuestionsHeader {
+  padding: 15px 30px;
+  border-bottom: 1px solid #333;
+}
+
+.RulesBox .RulesList {
+  margin-top: 10px;
+  padding: 15px 30px;
+  margin-left: 13px;
+}
+
+.RulesList li {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3333332a;
+}
+
+.RulesList li span {
+  color: #007bff;
+}
+
+
+/* ============== Questions ============== */
+
+.QuestionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.QuestionsHeader h3 {
+  font-size: 1rem;
+}
+
+.QuestionsHeader #time_lines {
+  position: absolute;
+}
+
+.QuestionsHeader .timeCount {
+  display: flex;
+  color: #004085;
+  background: #cce5ff;
+  align-items: center;
+  justify-content: space-between;
+  height: 25px;
+  border-radius: 5px;
+  padding: 5px 7px;
+  width: 125px;
+}
+
+.QuestionsHeader .timeCount #timeSeconds {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: #344a40;
+  color: #fff;
+  padding: 3px 4px;
+  border-radius: 5px;
+}
+
+.QBody {
+  padding: 15px 30px;
+}
+
+.QBody h1 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.QBody h1 span:nth-child(1) {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.QBody .Qoptions {
+  gap: 10px;
+  display: grid;
+}
+
+.QBody .Qoptions p {
+  background: #24482429;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid #226322c4;
+  position: relative;
+  padding-right: 27px;
+}
+
+.QBody .Qoptions p i {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: hidden;
+}
+
+.BtnFooter {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-top: 1px solid #333;
+  height: 45px;
+}
+
+.BtnFooter p {
+  text-align: left;
+  padding: 13px 12px;
+}
+
+/* Right Answer */
+.QBody .Qoptions p.right {
+  background: #22822266;
+  border: 1px solid #04bd04;
+}
+
+.QBody .Qoptions p.right i {
+  color: #00ea00;
+  visibility: visible;
+}
+
+/* Wrong Answer */
+.QBody .Qoptions p.wrong {
+  background: #bc2b2b66;
+  border-color: #a20000d6;
+}
+
+.QBody .Qoptions p.wrong i {
+  color: #ed0000;
+  visibility: visible;
+}
