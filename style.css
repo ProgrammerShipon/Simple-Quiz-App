@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 body {
@@ -17,12 +17,26 @@ body {
 .MyQuizApp,
 .RulesBox,
 .QuestionsBox {
-  width: 320px;
-  height: 580px;
   background-color: #fff;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 10%);
   border-radius: 15px;
   position: relative;
+  transition: 0.4s;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transform: scale(0);
+  visibility: hidden;
+}
+
+.MyQuizApp.visible,
+.RulesBox.visible,
+.QuestionsBox.visible {
+  visibility: visible;
+  transform: scale(0.99);
+  opacity: 1;
+  width: 320px;
+  height: 580px;
 }
 
 .MyQuizApp .img img {
@@ -50,7 +64,7 @@ body {
   cursor: pointer;
   bottom: 0;
   position: absolute;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .BtnFooter button#Continue,
@@ -73,7 +87,6 @@ button#Start {
 .BtnFooter button#ExitQuiz:hover {
   background: #880606;
 }
-
 
 /* Rules Steps */
 .RulesBox,
@@ -103,7 +116,6 @@ button#Start {
   color: #007bff;
 }
 
-
 /* ============== Questions ============== */
 
 .QuestionsHeader {
@@ -119,6 +131,12 @@ button#Start {
 
 .QuestionsHeader #time_lines {
   position: absolute;
+  background: #2fa4eb;
+  width: 40%;
+  height: 4px;
+  left: 0;
+  bottom: -4px;
+  transition: 0.4s;
 }
 
 .QuestionsHeader .timeCount {
@@ -168,6 +186,7 @@ button#Start {
   border: 1px solid #226322c4;
   position: relative;
   padding-right: 27px;
+  cursor: pointer;
 }
 
 .QBody .Qoptions p i {
@@ -212,4 +231,8 @@ button#Start {
 .QBody .Qoptions p.wrong i {
   color: #ed0000;
   visibility: visible;
+}
+
+.QBody .Qoptions.userClick p {
+  pointer-events: none;
 }

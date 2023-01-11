@@ -1,23 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Quiz App with Fixed Time </title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App with Fixed Time</title>
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <!-- font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <div id="QuizApp">
-    
-  </div>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="QuizApp">
+      <div class="MyQuizApp visible">
+        <div class="img">
+          <img src="./img/Question.svg" alt="" />
+        </div>
 
-  <script src="./js/main.js"></script>
-</body>
+        <div class="text">
+          <h3>Quiz App With Fixed Time</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
+            aspernatur nesciunt, voluptatem quo dicta et. Eligendi atque
+            dolores, quos dicta assumenda temporibus, accusamus saepe, cum dolor
+            nostrum iure enim illo voluptate sunt alias repudiandae
+          </p>
+          <h3>Quiz App With Fixed Time</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis,
+            libero?
+          </p>
+        </div>
+
+        <div class="BtnFooter">
+          <button id="Start">Start Quiz</button>
+        </div>
+      </div>
+
+      <div class="RulesBox">
+        <div class="RulesTitle">
+          <h2>Some Rules of this Quiz</h2>
+        </div>
+        <div class="RulesList">
+          <ol>
+            <li>
+              You Will have only <span> 15 seconds </span> per each question
+            </li>
+            <li>Once you select you answer , it can't be undone</li>
+            <li>you can't select any option once time goes off.</li>
+            <li>You'll get points on the basis of your correct answers</li>
+          </ol>
+        </div>
+        <div class="BtnFooter">
+          <button id="ExitQuiz">Exit Quiz</button>
+          <button id="Continue">Continue</button>
+        </div>
+      </div>
+
+      <div class="QuestionsBox">
+        <div class="QuestionsHeader">
+          <h3 class="QTitle">Start Exam</h3>
+          <div class="timeCount">
+            <div class="timeLeft">Time Left :</div>
+            <div id="timeSeconds">15</div>
+          </div>
+          <div id="time_lines"></div>
+        </div>
+
+        <div class="QBody">
+          <h1>
+            <span class="Qserial"> 1 . </span>
+            <span class="Qtext">
+              What Does HTML Stand For ? What Does HTML Stand For ?
+            </span>
+          </h1>
+          <div class="Qoptions"></div>
+        </div>
+
+        <div class="BtnFooter">
+          <p>
+            <span class="runningQue">3</span> of
+            <span class="totalQue"> 5 </span> Questions
+          </p>
+          <button id="NextQue">NextQue</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/question.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
