@@ -24,7 +24,7 @@
   </head>
   <body>
     <div id="QuizApp">
-      <div class="MyQuizApp visible">
+      <div class="MyQuizApp">
         <div class="img">
           <img src="./img/Question.svg" alt="" />
         </div>
@@ -95,6 +95,30 @@
             <span class="totalQue"> 5 </span> Questions
           </p>
           <button id="NextQue">NextQue</button>
+        </div>
+      </div>
+
+      <div class="result_box visible">
+        <div class="resultImg">
+          <img src="./img/winner.svg" alt="" />
+        </div>
+        <div class="RulesList">
+          <div class="complete_text">
+            <p>You Have Finished This Exam</p>
+          </div>
+          <div class="score_text">
+            <span>
+              Carry on 👍 You Got
+
+              <p>0</p>
+              Out Of
+              <p>5</p>
+            </span>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="restart">Replay</button>
+          <button id="quit">Quit Quiz</button>
         </div>
       </div>
     </div>

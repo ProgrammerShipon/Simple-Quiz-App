@@ -14,9 +14,14 @@ body {
   max-height: 100vh;
 }
 
+img {
+  width: 100%;
+}
+
 .MyQuizApp,
 .RulesBox,
-.QuestionsBox {
+.QuestionsBox,
+.result_box {
   background-color: #fff;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 10%);
   border-radius: 15px;
@@ -31,16 +36,13 @@ body {
 
 .MyQuizApp.visible,
 .RulesBox.visible,
-.QuestionsBox.visible {
+.QuestionsBox.visible,
+.result_box.visible {
   visibility: visible;
   transform: scale(0.99);
   opacity: 1;
   width: 320px;
   height: 580px;
-}
-
-.MyQuizApp .img img {
-  width: 100%;
 }
 
 .text {
@@ -53,7 +55,8 @@ body {
 }
 
 .MyBtn button,
-.BtnFooter button {
+.BtnFooter button,
+.result_box button {
   font-size: 20px;
   font-weight: 600;
   background-color: tomato;
@@ -69,22 +72,26 @@ body {
 
 .BtnFooter button#Continue,
 button#NextQue,
-button#Start {
+button#Start,
+button#restart {
   right: 0;
   border-radius: 44px 0px 15px 0px;
 }
 
-.BtnFooter button#ExitQuiz {
+.BtnFooter button#ExitQuiz,
+button#quit {
   left: 0;
   border-radius: 0px 44px 0px 15px;
 }
 
 .MyBtn button:hover,
-.BtnFooter button:hover {
+.BtnFooter button:hover,
+button#restart:hover {
   background: #1dc2c2;
 }
 
-.BtnFooter button#ExitQuiz:hover {
+.BtnFooter button#ExitQuiz:hover,
+button#quit:hover {
   background: #880606;
 }
 
@@ -100,7 +107,8 @@ button#Start {
   border-bottom: 1px solid #333;
 }
 
-.RulesBox .RulesList {
+.RulesBox .RulesList,
+.RulesList {
   margin-top: 10px;
   padding: 15px 30px;
   margin-left: 13px;
@@ -132,10 +140,10 @@ button#Start {
 .QuestionsHeader #time_lines {
   position: absolute;
   background: #2fa4eb;
-  width: 40%;
+  /* width: 40%; */
   height: 4px;
   left: 0;
-  bottom: -4px;
+  bottom: -2px;
   transition: 0.4s;
 }
 
@@ -197,7 +205,8 @@ button#Start {
   visibility: hidden;
 }
 
-.BtnFooter {
+.BtnFooter,
+.buttons {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -235,4 +244,20 @@ button#Start {
 
 .QBody .Qoptions.userClick p {
   pointer-events: none;
+}
+
+button#NextQue.show {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: visiblePainted;
+}
+
+button#NextQue.hiden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.resultImg {
+  padding: 20px;
 }

@@ -27,6 +27,8 @@ let second = 15;
 let qui_count = 0;
 let counters;
 let timerline;
+let LineTimeW;
+let LineWidth = 0;
 
 // Button Clicking Events
 StartBtn.addEventListener("click", () =>
@@ -42,8 +44,11 @@ Continu.addEventListener("click", () => {
   qui_count += qui_count;
   getQuestion(qui_count);
   clearTimeout(counters);
+  
   timerFc(second);
-  lines();
+  LineTim(0);
+
+  NextQue.classList.add("hiden");
 });
 
 NextQue.addEventListener("click", () => {
@@ -53,19 +58,24 @@ NextQue.addEventListener("click", () => {
   getQuestion(qui_count);
   clearTimeout(counters);
   timerFc(second);
+
   clearInterval(timerline);
-  lines();
+  LineTim(LineWidth);
+
+  NextQue.classList.add('hiden');
 });
 
 // Running
-function lines() {
-  timerline = setInterval(lin, 50);
-  let wd = 0;
-
-  function lin() {
-    wd *= 0.33333333333;
-    if (0 <= widths) {
-      console.log(wd);
+// Line Timing width Running Function
+function LineTim(timesL) {
+  let lw = 0;
+  timerline = setInterval(timerLi, 50);
+  function timerLi() {
+    timesL += 1;
+    time_lines.style.width = timesL + "px";
+    console.log(timesL);
+    if (timesL > 319) {
+      clearInterval(timerline);
     }
   }
 }
@@ -81,8 +91,8 @@ function timerFc(secondV) {
       }
     } else {
       timeSeconds.innerHTML = "00";
+      clearTimeout(LineTimeW);
       clearTimeout(counters);
-      clearInterval(timerline);
     }
   }, 1000);
 }
@@ -102,13 +112,12 @@ function getQuestion(index) {
   }
 
   const BtnFooter = document.querySelector(".BtnFooter p");
-  BtnFooter.innerHTML = `<span class="runningQue"> ${question[index].numb} </span>
-               of <span class="totalQue"> ${question.length} </span> Questions`;
+  BtnFooter.innerHTML = `<span class="runningQue"> ${question[index].numb} </span> of <span class="totalQue"> ${question.length} </span> Questions`;
 }
 
 // Options Select User
 function optionSelected(ans) {
-  clearTimeout(counters);
+
   const userAns = ans.innerText;
   const curetAns = question[qui_count].answer;
   if (userAns == curetAns) {
@@ -124,7 +133,14 @@ function optionSelected(ans) {
     let AnsParent = ans.parentElement;
     AnsParent.classList.add("userClick");
   }
+  
+  clearTimeout(counters);
+  clearTimeout(timerline);
+
+  NextQue.classList.remove("hiden");
+  NextQue.classList.add("show");
 }
+
 
 // "Common Function" Class List Add or Remove Function
 function addRemove(addId, removeId, cls) {
